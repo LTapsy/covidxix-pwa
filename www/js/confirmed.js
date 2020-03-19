@@ -12,7 +12,7 @@ function initialLoad(){
     
     
         confirmed += "<h1>"+covid.latest+"</h1>";
-        confirmed += "<h3>Confirmed Cases World Wide</h3>";
+        confirmed += "<h3>Confirmed Cases WorldWide</h3>";
         
         $(".cases").html(confirmed);
 
@@ -34,6 +34,7 @@ function initialLoad(){
         }
     
         $(".locationContainer").html(locations);
+        $(".loadingScreen").hide();
     })
     .catch(err => {
         console.log(err);
