@@ -1,4 +1,6 @@
+var coronaV
 function initialLoad(){
+    
     var covid
     fetch("https://cors-anywhere.herokuapp.com/" + "https://coronavirus-tracker-api.herokuapp.com/deaths", {
         "method": "GET"
@@ -16,7 +18,7 @@ function initialLoad(){
         
         $(".cases").html(confirmed);
 
-        
+        coronaV = covid;
 
         var locations = "";
         
@@ -61,6 +63,39 @@ function initialLoad(){
     }initialLoad();
     
     
+    function regenerate(){
+        var locations = "";
+        var inputValue = document.querySelector('#myInput').value;
+        var filtered = coronaV.locations.filter(function (el) {
+            return el.country.toLowerCase().indexOf(inputValue.toLowerCase()) > -1;
+            });
+        // for(x = 0; x!= covid.locations.length;x++){
+            
+        if(inputValue !== ''){
+            for(x = 0; x!= filtered.length;x++){
+            // console.log(covid.locations[x].province);
+            
+                if(filtered[x].province == ""){
+                    locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+filtered[x].country+`</p><p class="caseCount">Count: `+filtered[x].latest+`</p></div>`;
+                }else{
+                    locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+filtered[x].province+", "+filtered[x].country+`</p><p class="caseCount">Count: `+filtered[x].latest+`</p></div>`;
+                }
+            }
+            
+        } 
+        if(inputValue == ''){
+            for(x = 0; x!= coronaV.locations.length;x++){
+            // console.log(covid.locations[x].province);
+                if(coronaV.locations[x].province == ""){
+                    locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+coronaV.locations[x].country+`</p><p class="caseCount">Count: `+coronaV.locations[x].latest+`</p></div>`;
+                }else{
+                    locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+coronaV.locations[x].province+", "+coronaV.locations[x].country+`</p><p class="caseCount">Count: `+coronaV.locations[x].latest+`</p></div>`;
+                }
+            }
+        }
+        $("#locationContainer").html("")
+        $(".locationContainer").html(locations);
+    }
     
     
         
