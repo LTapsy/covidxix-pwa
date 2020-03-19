@@ -1,5 +1,10 @@
 function initialLoad(){
 var covid
+
+
+
+
+
 fetch("https://cors-anywhere.herokuapp.com/" + "https://coronavirus-tracker-api.herokuapp.com/all", {
     "method": "GET"
 })
@@ -7,12 +12,8 @@ fetch("https://cors-anywhere.herokuapp.com/" + "https://coronavirus-tracker-api.
 .then(covid => {
     console.log(covid);
     console.log(covid.latest);
-    // alert(JSON.stringify(covid));
 
-    var content ="";
-
-
-    content += "";
+    var content = "";
 
     content += `<div class="confirmed"><p class="title"><b>Confirmed Cases</b></p><p>Date : `+covid.confirmed.last_updated.slice(0, 10)+`</p><p>Count : `+covid.latest.confirmed+`</p></div>` ;
     content += `<div class="deaths"><p class="title"><b>Deaths</b></p><p>Date : `+covid.deaths.last_updated.slice(0, 10)+`</p><p>Count : `+covid.latest.deaths+`</p></div>` ;
@@ -20,8 +21,8 @@ fetch("https://cors-anywhere.herokuapp.com/" + "https://coronavirus-tracker-api.
     
 
     $(".latestContainer").html(content);
-
-
+    
+    $(".loadingScreen").hide();
 })
 .catch(err => {
     console.log(err);

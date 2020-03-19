@@ -50,6 +50,7 @@ function initialLoad(){
         }
     
         $(".locationContainer").html(locations);
+        $(".loadingScreen").hide();
     })
     .catch(err => {
         console.log(err);
