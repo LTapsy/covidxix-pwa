@@ -29,6 +29,7 @@ function initialLoad(){
 
       
       for(x=0;x!=covid.confirmed.locations.length;x++){
+        if(covid.confirmed.locations[x].latest != "0"){
           var marker = L.marker([covid.confirmed.locations[x].coordinates.lat,covid.confirmed.locations[x].coordinates.long],{icon: redIcon}).addTo(map).bindPopup("COVID-19: There are "+covid.confirmed.locations[x].latest+ " case/s reported here in "+covid.confirmed.locations[x].province+" , "+covid.confirmed.locations[x].country).openPopup();
           var circle = L.circle([covid.confirmed.locations[x].coordinates.lat, covid.confirmed.locations[x].coordinates.long], {
               color: 'none',//color of the stroke for the radius parameter
@@ -36,6 +37,7 @@ function initialLoad(){
               fillOpacity: 0.2,
               radius: 500000
           }).addTo(map);
+        }
       }
 
 

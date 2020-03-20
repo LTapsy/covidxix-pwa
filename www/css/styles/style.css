@@ -16,6 +16,7 @@ body{
     height:100vh;
     width:100vw;
     overflow: hidden;
+    /* border:1px solid red; */
 }
 
 header{
@@ -110,6 +111,13 @@ menu ul li a{
     margin:10px 0;
 }
 
+
+#confirmedContainer,#recoveredContainer,#deathsContainer{
+    display:flex;
+    flex-direction: column;
+}
+
+
 .cases{
     display:flex;
     height:20vh;
@@ -122,7 +130,7 @@ menu ul li a{
 }
 
 .locationContainer{
-    height:72vh;
+    height:64vh;
     overflow: scroll;
 }
 
@@ -193,4 +201,19 @@ menu ul li a{
 .source{
     padding:20px 20px;
     border-bottom:1px solid lightgray;
+}
+
+/* ////////////////// */
+
+#myInput{
+    height:6vh;
+    padding:0 20px;
+}
+
+/* /////////////// */
+
+canvas{
+    background:#313131;
+    
+    transform: rotate(-180deg)skew(40);
 }
