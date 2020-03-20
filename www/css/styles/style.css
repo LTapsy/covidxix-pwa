@@ -214,6 +214,5 @@ menu ul li a{
 
 canvas{
     background:#313131;
-    
-    transform: rotate(-180deg)skew(40);
+    transform: rotateX(-180deg) rotateY(-180deg);
 }

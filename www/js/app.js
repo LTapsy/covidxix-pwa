@@ -2,16 +2,13 @@ function initialLoad(){
 var covid
 
 
-
-
-
 fetch("https://cors-anywhere.herokuapp.com/" + "https://coronavirus-tracker-api.herokuapp.com/all", {
     "method": "GET"
 })
 .then(res => res.json())          
 .then(covid => {
-    console.log(covid);
-    console.log(covid.latest);
+    // console.log(covid);
+    // console.log(covid.latest);
 
     var content = "";
 
