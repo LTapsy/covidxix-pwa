@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="css/styles/all.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
         <title>Covid - 19</title>
     </head>
     <body>
@@ -41,7 +42,7 @@
                     </li>
                 </ul>
                 <p class="creators">
-                    Created by : Lord Tapulao & Floyd Santos
+                    Created by : <a href="creator.html">Turtle Tech</a>
                 </p>
             </menu>
         </aside>
@@ -49,13 +50,15 @@
             <div class="latestCases">
                 <h3>Latest Update</h3>
             </div>
-            <div class="graph">
-                <canvas width=0 height=200 class="firstGraph"></canvas>
-                GRAPH NOT YET DONE
-            </div>
-            <div class="latestContainer">
-                
-                
+            <div class="contentBox">
+                <div class="graph">
+                    <canvas id="myChart" width="400" height="400"></canvas>
+                    GRAPH NOT YET DONE
+                </div>
+                <div class="latestContainer">
+                    
+                    
+                </div>
             </div>
         </main>
         <div class="loadingScreen">
@@ -65,6 +68,10 @@
             </div>
         </div>
     </body>
+    <script>
+        
+        </script>
+        
     <script src="js/app.js"></script>
     <script src="js/graph.js"></script>
     <script src="js/sideMenu.js"></script>

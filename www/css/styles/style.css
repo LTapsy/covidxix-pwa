@@ -19,6 +19,8 @@ body{
     /* border:1px solid red; */
 }
 
+
+
 header{
     display:flex;
     justify-content: center;
@@ -83,15 +85,18 @@ menu ul li a{
     position:absolute;
     bottom:20px;
     color:gray;
-    font-size:8px;
+    font-size:12px;
+}
+
+.creators a{
+    color:gray;
 }
 
 .latestCases{
     display:flex;
-    /* height:92vh; */
-    padding:30px;
+    height:20vh;
     flex-direction: column;
-    /* justify-content: center; */
+    justify-content: center;
     /* align-items: center; */
     background:url(../../img/corona.jpg),#292929;
     background-blend-mode: overlay;
@@ -103,8 +108,12 @@ menu ul li a{
     padding:10px 30px;
 }
 
-.latestCases h3,.deaths,.confirmed,.recovered{
+.deaths,.confirmed,.recovered{
     margin:20px 0;
+}
+
+.latestCases h3{
+    padding-left:30px;
 }
 
 .title{
@@ -212,7 +221,21 @@ menu ul li a{
 
 /* /////////////// */
 
-canvas{
+/* canvas{
     background:#313131;
     transform: rotateX(-180deg) rotateY(-180deg);
+} */
+
+
+.contentBox{
+    height:73vh;
+    overflow: scroll;
+}
+
+.graph{
+    padding:30px 10px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
