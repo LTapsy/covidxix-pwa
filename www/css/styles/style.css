@@ -49,6 +49,7 @@ aside{
     transform: translateX(-100vw);
     transition: 0.2s ease-out;
     z-index: 999999;
+    opacity: 0;
 }
 
 menu{
@@ -106,6 +107,7 @@ menu ul li a{
 
 .latestContainer{
     padding:10px 30px;
+    margin-bottom:30px;
 }
 
 .deaths,.confirmed,.recovered{
@@ -124,6 +126,7 @@ menu ul li a{
 #confirmedContainer,#recoveredContainer,#deathsContainer{
     display:flex;
     flex-direction: column;
+    /* color:#ffffff00; */
 }
 
 
@@ -234,4 +237,48 @@ menu ul li a{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin:30px 20px 0px 20px;
+    /* border:1px solid red; */
+    border-radius:10px;
+    background:#E4E4E4;
+    filter:drop-shadow(0px 0px 15px #00000038)
+}
+
+@media only screen and (min-width: 600px) {
+    .graph{
+        display:none;
+    }
+}
+
+.safetyBox{
+    padding:0 20px;
+    height:73vh;
+    overflow: scroll;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.safetyBox h2{
+    margin:30px 0 10px;
+}
+
+.safetyBox img{
+    margin:30px 0 20px 0;
+}
+
+.safetyBox ul{
+    padding:0 0 0 30px;
+    margin:10px 0;
+}
+
+.safetyBox ul li{
+    list-style-type: disc !important;
+    font-size:14px;
+    margin:10px 0;
+}
+
+.spacer{
+    padding:30px 0
 }
