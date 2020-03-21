@@ -45,12 +45,53 @@ function initialLoad(){
             // console.log(covid.locations[x].province);
             if(covid.locations[x].latest != "0"){
                 if(covid.locations[x].province == ""){
-                    locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+covid.locations[x].country+`</p><p class="caseCount">Count: `+covid.locations[x].latest+`</p></div>`;
+                    locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+covid.locations[x].country+`</p><p class="caseCount">Count: `+covid.locations[x].latest+`</p><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Open Modal</button></div>`;
                 }else{
-                    locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+covid.locations[x].province+", "+covid.locations[x].country+`</p><p class="caseCount">Count: `+covid.locations[x].latest+`</p></div>`;
+                    locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+covid.locations[x].province+", "+covid.locations[x].country+`</p><p class="caseCount">Count: `+covid.locations[x].latest+`</p><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Open Modal</button></div>`;
                 }
             }
+            var ass = covid.locations[x].history
+            var ctxLine = document.getElementById("myChart").getContext("2d");
+            if(window.bar != undefined) 
+            window.bar.destroy(); 
+            window.bar = new Chart(ctxLine, {
+                type: 'bar',
+                data: {
+                    labels: Object.keys(ass),
+                    datasets: [{
+                        label: '# of Votes',
+                        data: Object.values(ass),
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
             
+            });
+
         }
     
         $(".locationContainer").html(locations);
@@ -63,7 +104,6 @@ function initialLoad(){
     
     
     }initialLoad();
-    
     
     
     

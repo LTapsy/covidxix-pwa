@@ -8,7 +8,10 @@
     <link rel="stylesheet" href="css/styles/style.css">
     <link rel="stylesheet" href="css/styles/all.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 </head>
 <body>
     <header>
@@ -41,11 +44,29 @@
         </menu>
     </aside>
     <main id="confirmedContainer">
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+            
+                    <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                    </div>
+                    <div class="modal-body">
+                        <canvas id="myChart" width="400" height="400"></canvas>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="cases"></div>
         <input type="text" id="myInput" onkeyup="regenerate()" placeholder="Enter Your Country" title="Type in a name">
         <div class="locationContainer" id="locationContainer">
-
-        </div>
+            
+    </div>
     </main>
     <div class="loadingScreen">
         <div class="loadingScreenBox">
