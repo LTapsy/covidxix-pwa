@@ -93,7 +93,7 @@ fetch("https://cors-anywhere.herokuapp.com/" + "https://coronavirus-tracker-api.
                     ConfirmedValueThreeDaysAgo,
                     ConfirmedValueTwoDaysAgo,
                     ConfirmedValueYesterday,
-                    ConfirmedValueToday
+                    covid.latest.confirmed
                 ],
                 backgroundColor: [
                     '#7332a81c'
@@ -110,7 +110,7 @@ fetch("https://cors-anywhere.herokuapp.com/" + "https://coronavirus-tracker-api.
                     DeathsValueThreeDaysAgo,
                     DeathsValueTwoDaysAgo,
                     DeathsValueYesterday,
-                    DeathsValueToday
+                    covid.latest.deaths
                 ],
                 backgroundColor: [
                     '#a8323a21'
@@ -127,7 +127,7 @@ fetch("https://cors-anywhere.herokuapp.com/" + "https://coronavirus-tracker-api.
                     RecoveredValueThreeDaysAgo,
                     RecoveredValueTwoDaysAgo,
                     RecoveredValueYesterday,
-                    RecoveredValueToday
+                    covid.latest.recovered
                 ],
                 backgroundColor: [
                     '#ffffff00'

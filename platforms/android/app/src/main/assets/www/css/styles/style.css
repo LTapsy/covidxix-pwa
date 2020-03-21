@@ -16,7 +16,10 @@ body{
     height:100vh;
     width:100vw;
     overflow: hidden;
+    /* border:1px solid red; */
 }
+
+
 
 header{
     display:flex;
@@ -46,6 +49,7 @@ aside{
     transform: translateX(-100vw);
     transition: 0.2s ease-out;
     z-index: 999999;
+    opacity: 0;
 }
 
 menu{
@@ -82,15 +86,18 @@ menu ul li a{
     position:absolute;
     bottom:20px;
     color:gray;
-    font-size:8px;
+    font-size:12px;
+}
+
+.creators a{
+    color:gray;
 }
 
 .latestCases{
     display:flex;
-    /* height:92vh; */
-    padding:30px;
+    height:20vh;
     flex-direction: column;
-    /* justify-content: center; */
+    justify-content: center;
     /* align-items: center; */
     background:url(../../img/corona.jpg),#292929;
     background-blend-mode: overlay;
@@ -100,15 +107,28 @@ menu ul li a{
 
 .latestContainer{
     padding:10px 30px;
+    margin-bottom:30px;
 }
 
-.latestCases h3,.deaths,.confirmed,.recovered{
+.deaths,.confirmed,.recovered{
     margin:20px 0;
+}
+
+.latestCases h3{
+    padding-left:30px;
 }
 
 .title{
     margin:10px 0;
 }
+
+
+#confirmedContainer,#recoveredContainer,#deathsContainer{
+    display:flex;
+    flex-direction: column;
+    /* color:#ffffff00; */
+}
+
 
 .cases{
     display:flex;
@@ -122,7 +142,7 @@ menu ul li a{
 }
 
 .locationContainer{
-    height:72vh;
+    height:64vh;
     overflow: scroll;
 }
 
@@ -193,4 +213,72 @@ menu ul li a{
 .source{
     padding:20px 20px;
     border-bottom:1px solid lightgray;
+}
+
+/* ////////////////// */
+
+#myInput{
+    height:6vh;
+    padding:0 20px;
+}
+
+/* /////////////// */
+
+
+
+.contentBox{
+    height:73vh;
+    overflow: scroll;
+}
+
+.graph{
+    padding:30px 10px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:30px 20px 0px 20px;
+    /* border:1px solid red; */
+    border-radius:10px;
+    background:#E4E4E4;
+    filter:drop-shadow(0px 0px 15px #00000038)
+}
+
+@media only screen and (min-width: 600px) {
+    .graph{
+        display:none;
+    }
+}
+
+.safetyBox{
+    padding:0 20px;
+    height:73vh;
+    overflow: scroll;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.safetyBox h2{
+    margin:30px 0 10px;
+}
+
+.safetyBox img{
+    margin:30px 0 20px 0;
+}
+
+.safetyBox ul{
+    padding:0 0 0 30px;
+    margin:10px 0;
+}
+
+.safetyBox ul li{
+    list-style-type: disc !important;
+    font-size:14px;
+    margin:10px 0;
+}
+
+.spacer{
+    padding:30px 0
 }

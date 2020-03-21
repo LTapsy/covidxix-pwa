@@ -9,6 +9,14 @@
     <link rel="stylesheet" href="css/styles/all.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <meta property="og:title" content="Covidxix Web App">
+    <meta property="og:description" content="Monitoring Daily Updates of the Corona Virus">
+    <meta property="og:url" content="https://covidxix.netlify.com/">
+    <meta property="og:image" content="./img/corona.jpg">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="1024">
 </head>
 <body>
     <header>
@@ -21,6 +29,9 @@
             <ul>
                 <li>
                     <a href="./index.html">Latest Update</a>
+                </li>
+                <li>
+                    <a href="./safetyTips.html">Safety Tips & Preventions</a>
                 </li>
                 <li>
                     <a href="./map.html">Map & Location</a>
@@ -39,13 +50,13 @@
                 </li>
             </ul>
             <p class="creators">
-                Created by : Lord Tapulao & Floyd Santos
+                Created by : <a href="creator.html">Turtle Tech</a>
             </p>
         </menu>
     </aside>
     <main id="deathsContainer">
         <div class="cases"></div>
-        <input type="text" id="myInput" onkeyup="regenerate()" placeholder="Search for names.." title="Type in a name">
+        <input type="text" id="myInput" onkeyup="regenerate()" placeholder="Enter Your Country" title="Type in a name">
         <div class="locationContainer">
 
         </div>

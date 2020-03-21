@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" href="css/styles/style.css">
+        <link rel="stylesheet" href="css/styles/all.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <meta property="og:title" content="Covidxix Web App">
+        <meta property="og:description" content="Monitoring Daily Updates of the Corona Virus">
+        <meta property="og:url" content="https://covidxix.netlify.com/">
+        <meta property="og:image" content="./img/corona.jpg">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="1024">
+        <meta property="og:image:height" content="1024">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-161276291-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-161276291-1');
+</script>
+
+
+        <title>Covid - 19</title>
+    </head>
+    <body>
+        <header>
+            <i class="fas fa-bars fa-2x" onclick="SideMenu()"></i>
+            <h2>Covid - 19</h2>
+        </header>
+        <aside id="sideMenu">
+            <menu>
+                <div class="banner"></div>
+                <ul>
+                    <li>
+                        <a href="./index.html">Latest Update</a>
+                    </li>
+                    <li>
+                        <a href="./safetyTips.html">Safety Tips & Preventions</a>
+                    </li>
+                    <li>
+                        <a href="./map.html">Map & Location</a>
+                    </li>
+                    <li>
+                        <a href="./confirmed.html">Confirmed Cases</a>
+                    </li>
+                    <li>
+                        <a href="./death.html">Deaths</a>
+                    </li>
+                    <li>
+                        <a href="./recovered.html">Recovery Count</a>
+                    </li>
+                    <li>
+                        <a href="./resources.html">Resources</a>
+                    </li>
+                </ul>
+                <p class="creators">
+                    Created by : Lord Tapulao & Floyd Santos
+                </p>
+            </menu>
+        </aside>
+        <main id="latestContainer">
+            <div class="cases">
+                <h3>How to Protect Yourself</h3>
+            </div>
+            <div class="safetyBox">
+                
+                <h2>Know How it Spreads</h2>
+                <img src="./img/sneezingwoman.png" alt="">
+                <ul>
+                    <li>The best way to prevent illness is to avoid being exposed to this virus.</li>
+                    <li><b>The virus is thought to spread mainly from person-to-person.</b></li>
+                    <ul>
+                        <li>Between people who are in close contact with one another (within about 6 feet).</li>
+                        <li>Through respiratory droplets produced when an infected person coughs or sneezes.</li>
+                    </ul>
+                    <li>These droplets can land in the mouths or noses of people who are nearby or possibly be inhaled into the lungs.</li>
+                </ul>
+
+                <h2>Take steps to protect yourself</h2>
+                <img src="./img/protect-wash-hands.png" alt="">
+                <h3>Clean your hands often</h3>
+                <ul>
+                    <li><b>Wash your hands</b> often with soap and water for at least 20 seconds especially after you have been in a public place, or after blowing your nose, coughing, or sneezing.</li>
+                    <li>If soap and water are not readily available, <b>use a hand sanitizer that contains at least 60% alcohol.</b> Cover all surfaces of your hands and rub them together until they feel dry.</li>
+
+                    <li><b>Avoid touching your eyes, nose, and mouth</b> with unwashed hands.</li>
+                </ul>
+
+                <img src="./img/protect-quarantine.png" alt="">
+                <h3>Avoid close contact</h3>
+                <ul>
+                    <li><b>Avoid close contact</b> with people who are sick</li>
+                    <li>Put <b>distance between yourself and other people</b> if COVID-19 is spreading in your community. This is especially important for people who are at higher risk of getting very sick.</li>
+                </ul>
+
+
+                <h2>Take steps to protect others</h2>
+                <img src="./img/COVIDweb_02_bed.png" alt="">
+                <h3>Stay home if you’re sick</h3>
+                <ul>
+                    <li><b>Stay home</b> if you are sick, except to get medical care. Learn what to do if you are sick.</li>
+                </ul>
+
+                <img src="./img/COVIDweb_06_coverCough.png" alt="">
+                <h3>Cover coughs and sneezes</h3>
+                <ul>
+                    <li><b>Cover your mouth and nose</b> with a tissue when you cough or sneeze or use the inside of your elbow.</li>
+                    <li><b>Throw used tissues</b> in the trash.</li>
+                    <li>Immediately <b>wash your hands </b>with soap and water for at least 20 seconds. If soap and water are not readily available, clean your hands with a hand sanitizer that contains at least 60% alcohol.</li>
+                </ul>
+
+                <img src="./img/COVIDweb_05_mask.png" alt="">
+                <h3>Wear a facemask if you are sick</h3>
+                <ul>
+                    <li><b>If you are sick:</b> You should wear a facemask when you are around other people (e.g., sharing a room or vehicle) and before you enter a healthcare provider’s office. If you are not able to wear a facemask (for example, because it causes trouble breathing), then you should do your best to cover your coughs and sneezes, and people who are caring for you should wear a facemask if they enter your room. Learn what to do if you are sick.</li>
+                    <li><b>If you are NOT sick: </b> You do not need to wear a facemask unless you are caring for someone who is sick (and they are not able to wear a facemask). Facemasks may be in short supply and they should be saved for caregivers.</li>
+                </ul>
+                
+                <img src="./img/COVIDweb_09_clean.png" alt="">
+                <h3>Clean and disinfect</h3>
+                <ul>
+                    <li><b>Clean AND disinfect frequently touched surfaces daily.</b> This includes tables, doorknobs, light switches, countertops, handles, desks, phones, keyboards, toilets, faucets, and sinks.</li>
+                    <li><b>If surfaces are dirty, clean them:</b>  Use detergent or soap and water prior to disinfection.</li>
+                </ul>
+                <div class="spacer"></div>
+
+            </div>
+        </main>
+    </body>
+    <script src="js/sideMenu.js"></script>
+</html>

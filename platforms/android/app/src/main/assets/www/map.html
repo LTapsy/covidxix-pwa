@@ -20,6 +20,13 @@
 
   <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script> 
 
+  <meta property="og:title" content="Covidxix Web App">
+  <meta property="og:description" content="Monitoring Daily Updates of the Corona Virus">
+  <meta property="og:url" content="https://covidxix.netlify.com/">
+  <meta property="og:image" content="./img/corona.jpg">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
 
   <style>
     body {
@@ -30,6 +37,8 @@
       height: 100vh;
     }
   </style>
+
+
 </head>
 <body>
     <header>
@@ -41,27 +50,30 @@
             <div class="banner"></div>
             <ul>
               <li>
-                  <a href="./index.html">Latest Update</a>
-              </li>
-              <li>
-                  <a href="./map.html">Map & Location</a>
-              </li>
-              <li>
-                  <a href="./confirmed.html">Confirmed Cases</a>
-              </li>
-              <li>
-                  <a href="./death.html">Deaths</a>
-              </li>
-              <li>
-                  <a href="./recovered.html">Recovery Count</a>
-              </li>
-              <li>
-                  <a href="./resources.html">Resources</a>
-              </li>
+                <a href="./index.html">Latest Update</a>
+            </li>
+            <li>
+                <a href="./safetyTips.html">Safety Tips & Preventions</a>
+            </li>
+            <li>
+                <a href="./map.html">Map & Location</a>
+            </li>
+            <li>
+                <a href="./confirmed.html">Confirmed Cases</a>
+            </li>
+            <li>
+                <a href="./death.html">Deaths</a>
+            </li>
+            <li>
+                <a href="./recovered.html">Recovery Count</a>
+            </li>
+            <li>
+                <a href="./resources.html">Resources</a>
+            </li>
           </ul>
           <p class="creators">
-            Created by : Lord Tapulao & Floyd Santos
-        </p>
+            Created by : <a href="creator.html">Turtle Tech</a>
+          </p>
         </menu>
     </aside>
     <main id="Container">
@@ -75,11 +87,6 @@
           <h3>Please Wait</h3>
       </div>
     </div>
-
-  <script>
-
-
-  </script>
   <script src="js/map.js"></script>
   <script src="js/sideMenu.js"></script>
   <script src="js/loadingScreen.js"></script>
