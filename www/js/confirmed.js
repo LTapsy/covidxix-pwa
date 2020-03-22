@@ -47,9 +47,9 @@ function initialLoad(){
             // console.log(covid.locations[x].province);
             if(covid.locations[x].latest != "0"){
                 if(covid.locations[x].province == ""){
-                    locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+covid.locations[x].country+`</p><p class="caseCount">Count: `+covid.locations[x].latest+`</p><button type="button" class="btn btn-info btn-sm btnCustom" data-toggle="modal" data-target="#myModal" onclick="renderChart(`+ x +`)">Open History</button></div>`;
+                    locations += `<div class="locations" data-toggle="modal" data-target="#myModal" onclick="renderChart(`+ x +`)"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+covid.locations[x].country+`</p><p class="caseCount">Count: `+covid.locations[x].latest+`</p></div>`;
                 }else{
-                    locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+covid.locations[x].province+", "+covid.locations[x].country+`</p><p class="caseCount">Count: `+covid.locations[x].latest+`</p><button type="button" class="btn btn-info btn-sm btnCustom" data-toggle="modal" data-target="#myModal" onclick="renderChart(`+ x +`)">Open History</button></div>`;
+                    locations += `<div class="locations"  data-toggle="modal" data-target="#myModal" onclick="renderChart(`+ x +`)"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+covid.locations[x].province+", "+covid.locations[x].country+`</p><p class="caseCount">Count: `+covid.locations[x].latest+`</p></div>`;
                 }
             }
             var ass = covid.locations[x].history
@@ -75,6 +75,7 @@ function initialLoad(){
         
         $(".locationContainer").html(locations);
         $(".loadingScreen").hide();
+        
     })
     .catch(err => {
         console.log(err);
@@ -99,9 +100,9 @@ function regenerate(){
         // console.log(covid.locations[x].province);
         
             if(filtered[x].province == ""){
-                locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+filtered[x].country+`</p><p class="caseCount">Count: `+filtered[x].latest+`</p><button type="button" class="btn btn-info btn-sm btnCustom" data-toggle="modal" data-target="#myModal" onclick="renderChart(`+ x +`)">Open History</button></div>`;
+                locations += `<div class="locations"  data-toggle="modal" data-target="#myModal" onclick="renderChart(`+ x +`)"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+filtered[x].country+`</p><p class="caseCount">Count: `+filtered[x].latest+`</p></div>`;
             }else{
-                locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+filtered[x].province+", "+filtered[x].country+`</p><p class="caseCount">Count: `+filtered[x].latest+`</p><button type="button" class="btn btn-info btn-sm btnCustom" data-toggle="modal" data-target="#myModal" onclick="renderChart(`+ x +`)">Open History</button></div>`;
+                locations += `<div class="locations"  data-toggle="modal" data-target="#myModal" onclick="renderChart(`+ x +`)"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+filtered[x].province+", "+filtered[x].country+`</p><p class="caseCount">Count: `+filtered[x].latest+`</p></div>`;
             }
         }
         
@@ -110,9 +111,9 @@ function regenerate(){
         for(x = 0; x!= coronaV.locations.length;x++){
         // console.log(covid.locations[x].province);
             if(coronaV.locations[x].province == ""){
-                locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+coronaV.locations[x].country+`</p><p class="caseCount">Count: `+coronaV.locations[x].latest+`</p><button type="button" class="btn btn-info btn-sm btnCustom" data-toggle="modal" data-target="#myModal" onclick="renderChart(`+ x +`)">Open History</button></div>`;
+                locations += `<div class="locations"  data-toggle="modal" data-target="#myModal" onclick="renderChart(`+ x +`)"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+coronaV.locations[x].country+`</p><p class="caseCount">Count: `+coronaV.locations[x].latest+`</p></div>`;
             }else{
-                locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+coronaV.locations[x].province+", "+coronaV.locations[x].country+`</p><p class="caseCount">Count: `+coronaV.locations[x].latest+`</p><button type="button" class="btn btn-info btn-sm btnCustom" data-toggle="modal" data-target="#myModal" onclick="renderChart(`+ x +`)">Open History</button></div>`;
+                locations += `<div class="locations"  data-toggle="modal" data-target="#myModal" onclick="renderChart(`+ x +`)"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+coronaV.locations[x].province+", "+coronaV.locations[x].country+`</p><p class="caseCount">Count: `+coronaV.locations[x].latest+`</p>></div>`;
             }
         }
     }
@@ -144,7 +145,7 @@ function renderChart(arrayNumber){
     result[arrayNumber].forEach(function(element) { //this is where i render the chart based on which country button is clicked
         arrs.push(element.date) //this is where i generate the date into seperate array
         arrss.push(element.number); // and seperete array for numbers aswell to be brought to the data and label of chartJS
-        var ctxLine = document.getElementById("myChart").getContext("2d");
+        var ctxLine = document.getElementById("historyChart").getContext("2d");
         if(window.bar != undefined) 
         window.bar.destroy(); 
         window.bar = new Chart(ctxLine, {
@@ -170,5 +171,6 @@ function renderChart(arrayNumber){
             }
         
         });
+        
     })
 }
