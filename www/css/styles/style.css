@@ -82,6 +82,14 @@ menu ul li a{
     color:white;
 }
 
+.creatorBox{
+    display:flex;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+    padding:30px;
+}
+
 .creators{
     position:absolute;
     bottom:20px;
@@ -92,6 +100,19 @@ menu ul li a{
 .creators a{
     color:white;
     text-decoration: underline;
+}
+
+.creator{
+    margin:5px 0;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    color:black;
+}
+
+.creator i{
+    margin:10px;
+    color:#4c77af;
 }
 
 .latestCases{
