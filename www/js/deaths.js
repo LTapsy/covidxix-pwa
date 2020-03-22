@@ -46,9 +46,9 @@ function initialLoad(){
         for(x = 0; x!= covid.locations.length;x++){
             if(covid.locations[x].latest != "0"){
                 if(covid.locations[x].province == ""){
-                    locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+covid.locations[x].country+`</p><p class="caseCount">Count: `+covid.locations[x].latest+`</p><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal" onclick="renderChart(`+ x +`)">Open Modal</button></div>`;
+                    locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+covid.locations[x].country+`</p><p class="caseCount">Count: `+covid.locations[x].latest+`</p><button type="button" class="btn btn-info btn-sm btnCustom" data-toggle="modal" data-target="#myModal" onclick="renderChart(`+ x +`)">Open History</button></div>`;
                 }else{
-                    locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+covid.locations[x].province+", "+covid.locations[x].country+`</p><p class="caseCount">Count: `+covid.locations[x].latest+`</p><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal" onclick="renderChart(`+ x +`)">Open Modal</button></div>`;
+                    locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+covid.locations[x].province+", "+covid.locations[x].country+`</p><p class="caseCount">Count: `+covid.locations[x].latest+`</p><button type="button" class="btn btn-info btn-sm btnCustom" data-toggle="modal" data-target="#myModal" onclick="renderChart(`+ x +`)">Open History</button></div>`;
                 }
             }
             var ass = covid.locations[x].history
@@ -97,9 +97,9 @@ function initialLoad(){
             // console.log(covid.locations[x].province);
             
                 if(filtered[x].province == ""){
-                    locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+filtered[x].country+`</p><p class="caseCount">Count: `+filtered[x].latest+`</p><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal" onclick="renderChart(`+ x +`)">Open Modal</button></div>`;
+                    locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+filtered[x].country+`</p><p class="caseCount">Count: `+filtered[x].latest+`</p><button type="button" class="btn btn-info btn-sm btnCustom" data-toggle="modal" data-target="#myModal" onclick="renderChart(`+ x +`)">Open History</button></div>`;
                 }else{
-                    locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+filtered[x].province+", "+filtered[x].country+`</p><p class="caseCount">Count: `+filtered[x].latest+`</p><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal" onclick="renderChart(`+ x +`)">Open Modal</button></div>`;
+                    locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+filtered[x].province+", "+filtered[x].country+`</p><p class="caseCount">Count: `+filtered[x].latest+`</p><button type="button" class="btn btn-info btn-sm btnCustom" data-toggle="modal" data-target="#myModal" onclick="renderChart(`+ x +`)">Open History</button></div>`;
                 }
             }
             
@@ -108,9 +108,9 @@ function initialLoad(){
             for(x = 0; x!= coronaV.locations.length;x++){
             // console.log(covid.locations[x].province);
                 if(coronaV.locations[x].province == ""){
-                    locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+coronaV.locations[x].country+`</p><p class="caseCount">Count: `+coronaV.locations[x].latest+`</p><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal" onclick="renderChart(`+ x +`)">Open Modal</button></div>`;
+                    locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+coronaV.locations[x].country+`</p><p class="caseCount">Count: `+coronaV.locations[x].latest+`</p><button type="button" class="btn btn-info btn-sm btnCustom" data-toggle="modal" data-target="#myModal" onclick="renderChart(`+ x +`)">Open History</button></div>`;
                 }else{
-                    locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+coronaV.locations[x].province+", "+coronaV.locations[x].country+`</p><p class="caseCount">Count: `+coronaV.locations[x].latest+`</p><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal" onclick="renderChart(`+ x +`)">Open Modal</button></div>`;
+                    locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+coronaV.locations[x].province+", "+coronaV.locations[x].country+`</p><p class="caseCount">Count: `+coronaV.locations[x].latest+`</p><button type="button" class="btn btn-info btn-sm btnCustom" data-toggle="modal" data-target="#myModal" onclick="renderChart(`+ x +`)">Open History</button></div>`;
                 }
             }
         }
@@ -152,7 +152,7 @@ function initialLoad(){
                 data: {
                     labels: arrs,
                     datasets: [{
-                        label: '# of Confirmed Cases',
+                        label: '# of Confirmed Deaths',
                         data: arrss,
                         backgroundColor: newarr,
                         borderColor: newarr,

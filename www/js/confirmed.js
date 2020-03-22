@@ -47,18 +47,18 @@ function initialLoad(){
             // console.log(covid.locations[x].province);
             if(covid.locations[x].latest != "0"){
                 if(covid.locations[x].province == ""){
-                    locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+covid.locations[x].country+`</p><p class="caseCount">Count: `+covid.locations[x].latest+`</p><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal" onclick="renderChart(`+ x +`)">Open Modal</button></div>`;
+                    locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+covid.locations[x].country+`</p><p class="caseCount">Count: `+covid.locations[x].latest+`</p><button type="button" class="btn btn-info btn-sm btnCustom" data-toggle="modal" data-target="#myModal" onclick="renderChart(`+ x +`)">Open History</button></div>`;
                 }else{
-                    locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+covid.locations[x].province+", "+covid.locations[x].country+`</p><p class="caseCount">Count: `+covid.locations[x].latest+`</p><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal" onclick="renderChart(`+ x +`)">Open Modal</button></div>`;
+                    locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+covid.locations[x].province+", "+covid.locations[x].country+`</p><p class="caseCount">Count: `+covid.locations[x].latest+`</p><button type="button" class="btn btn-info btn-sm btnCustom" data-toggle="modal" data-target="#myModal" onclick="renderChart(`+ x +`)">Open History</button></div>`;
                 }
             }
             var ass = covid.locations[x].history
             
             for(i=0; i != 59 ;  i++){
-                arr.push({"date":Object.keys(ass)[i], "number" : Object.values(ass)[i]})
+                arr.push({"date":Object.keys(ass)[i], "number" : Object.values(ass)[i]}) //this is whre i reconstruct the array thatt the api gave us, because before it was date: number, i changed it to date: date, number: number
             }
         }
-        function chunkArray(myArray, chunk_size){
+        function chunkArray(myArray, chunk_size){ //this is where i divide the whole array which is 20k+ by 59 so each contry has its own formatted array of date and numbers
             var index = 0;
             var arrayLength = arr.length;
             var tempArray = [];
@@ -71,7 +71,7 @@ function initialLoad(){
         
             return tempArray;
         }
-        result = chunkArray(arr, 59);
+        result = chunkArray(arr, 59); //existing array that is divided by 59
         
         $(".locationContainer").html(locations);
         $(".loadingScreen").hide();
@@ -99,9 +99,9 @@ function regenerate(){
         // console.log(covid.locations[x].province);
         
             if(filtered[x].province == ""){
-                locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+filtered[x].country+`</p><p class="caseCount">Count: `+filtered[x].latest+`</p><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal" onclick="renderChart(`+ x +`)">Open Modal</button></div>`;
+                locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+filtered[x].country+`</p><p class="caseCount">Count: `+filtered[x].latest+`</p><button type="button" class="btn btn-info btn-sm btnCustom" data-toggle="modal" data-target="#myModal" onclick="renderChart(`+ x +`)">Open History</button></div>`;
             }else{
-                locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+filtered[x].province+", "+filtered[x].country+`</p><p class="caseCount">Count: `+filtered[x].latest+`</p><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal" onclick="renderChart(`+ x +`)">Open Modal</button></div>`;
+                locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+filtered[x].province+", "+filtered[x].country+`</p><p class="caseCount">Count: `+filtered[x].latest+`</p><button type="button" class="btn btn-info btn-sm btnCustom" data-toggle="modal" data-target="#myModal" onclick="renderChart(`+ x +`)">Open History</button></div>`;
             }
         }
         
@@ -110,9 +110,9 @@ function regenerate(){
         for(x = 0; x!= coronaV.locations.length;x++){
         // console.log(covid.locations[x].province);
             if(coronaV.locations[x].province == ""){
-                locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+coronaV.locations[x].country+`</p><p class="caseCount">Count: `+coronaV.locations[x].latest+`</p><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal" onclick="renderChart(`+ x +`)">Open Modal</button></div>`;
+                locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+coronaV.locations[x].country+`</p><p class="caseCount">Count: `+coronaV.locations[x].latest+`</p><button type="button" class="btn btn-info btn-sm btnCustom" data-toggle="modal" data-target="#myModal" onclick="renderChart(`+ x +`)">Open History</button></div>`;
             }else{
-                locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+coronaV.locations[x].province+", "+coronaV.locations[x].country+`</p><p class="caseCount">Count: `+coronaV.locations[x].latest+`</p><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal" onclick="renderChart(`+ x +`)">Open Modal</button></div>`;
+                locations += `<div class="locations"><i class="fas fa-biohazard"></i><p  class="pwestuhan">`+coronaV.locations[x].province+", "+coronaV.locations[x].country+`</p><p class="caseCount">Count: `+coronaV.locations[x].latest+`</p><button type="button" class="btn btn-info btn-sm btnCustom" data-toggle="modal" data-target="#myModal" onclick="renderChart(`+ x +`)">Open History</button></div>`;
             }
         }
     }
@@ -127,7 +127,7 @@ function renderChart(arrayNumber){
         newarr.push('rgba(255, 99, 132, 0.2)')
     }
     function compare(a,b){
-        const dateA = new Date(a.date)
+        const dateA = new Date(a.date) //first i sort the array of 59 date and number, because on the api, the date is unorganized.
         const dateB = new Date(b.date)
         let comparison = 0;
 
@@ -141,9 +141,9 @@ function renderChart(arrayNumber){
     result[arrayNumber].sort(compare)
     
     // Outputs : [ [1,2,3] , [4,5,6] ,[7,8] ]
-    result[arrayNumber].forEach(function(element) {
-        arrs.push(element.date)
-        arrss.push(element.number);
+    result[arrayNumber].forEach(function(element) { //this is where i render the chart based on which country button is clicked
+        arrs.push(element.date) //this is where i generate the date into seperate array
+        arrss.push(element.number); // and seperete array for numbers aswell to be brought to the data and label of chartJS
         var ctxLine = document.getElementById("myChart").getContext("2d");
         if(window.bar != undefined) 
         window.bar.destroy(); 
