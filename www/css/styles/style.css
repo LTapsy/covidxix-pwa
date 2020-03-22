@@ -85,12 +85,13 @@ menu ul li a{
 .creators{
     position:absolute;
     bottom:20px;
-    color:gray;
+    color:lightcoral;
     font-size:12px;
 }
 
 .creators a{
-    color:gray;
+    color:white;
+    text-decoration: underline;
 }
 
 .latestCases{
@@ -237,17 +238,11 @@ menu ul li a{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin:30px 20px 0px 20px;
+    margin:30px 20px;
     /* border:1px solid red; */
     border-radius:10px;
     background:#E4E4E4;
     filter:drop-shadow(0px 0px 15px #00000038)
-}
-
-@media only screen and (min-width: 600px) {
-    .graph{
-        display:none;
-    }
 }
 
 .safetyBox{
@@ -262,6 +257,11 @@ menu ul li a{
 
 .safetyBox h2{
     margin:30px 0 10px;
+    font-weight: bolder;
+}
+
+.safetyBox h3{
+    font-weight: bolder;
 }
 
 .safetyBox img{
@@ -281,4 +281,58 @@ menu ul li a{
 
 .spacer{
     padding:30px 0
+}
+
+/* //////// */
+
+.leaflet-control-container{
+    display:none;
+}
+
+@media only screen and (min-width: 600px) {
+
+    .contentBox{
+        display:flex;
+        flex-direction: row;
+    }
+
+    .graph{
+        width:800px;
+        height:500px;
+    }
+
+    .latestContainer{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    
+    #mobileChart{
+        display:none !important;
+    }    
+
+    #myChart{
+        display:block !important;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+    .contentBox{
+        display:flex;
+        flex-direction: column;
+    }
+
+    .graph{
+        width:unset;
+        height:unset;
+    }
+
+    #mobileChart{
+        display:block !important;
+    }  
+    #myChart{
+        display:none !important;
+    }  
 }
