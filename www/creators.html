@@ -9,9 +9,6 @@
         <link rel="stylesheet" href="css/styles/style.css">
         <link rel="stylesheet" href="css/styles/all.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-        <title>Covid - 19</title>
 
         <meta property="og:title" content="Covidxix Web App">
         <meta property="og:description" content="Monitoring Daily Updates of the Corona Virus">
@@ -20,6 +17,19 @@
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="1024">
         <meta property="og:image:height" content="1024">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-161276291-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-161276291-1');
+</script>
+
+
+        <title>Covid - 19</title>
     </head>
     <body>
         <header>
@@ -59,28 +69,29 @@
         </aside>
         <main id="latestContainer">
             <div class="latestCases">
-                <h3>Latest Update</h3>
+                <h3>Turtle Tech</h3>
             </div>
-            <div class="contentBox">
-                <div class="graph">
-                    <canvas id="myChart" width="600" height="400"></canvas>
-                    <canvas id="mobileChart" width="400" height="400"></canvas>
-                </div>
-                <div class="latestContainer">
-                    
-                    
-                </div>
+            <div class="creatorBox">
+                <a href="https://www.linkedin.com/in/lord-tapulao-730969195/">
+                    <div class="creator">
+                        <i class="fab fa-linkedin fa-2x"></i>
+                        <h3>Lord Tapulao</h3>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/floyd-santos-138603b3/">
+                    <div class="creator">
+                        <i class="fab fa-linkedin fa-2x"></i>
+                        <h3>FLOYD SANTOS</h3>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/juliahack/">
+                    <div class="creator">
+                        <i class="fab fa-linkedin fa-2x"></i>
+                        <h3>JULIA HACK</h3>
+                    </div>
+                </a>
             </div>
         </main>
-        <div class="loadingScreen">
-            <div class="loadingScreenBox">
-                <i class="fas fa-biohazard fa-4x"></i>
-                <h3>Please Wait</h3>
-            </div>
-        </div>
     </body>
-    <script src="js/app.js"></script>
-    <!-- <script src="js/graph.js"></script> -->
     <script src="js/sideMenu.js"></script>
-    <script src="js/loadingScreen.js"></script>
 </html>
