@@ -25,10 +25,19 @@ function initialLoad(){
     .then(covid => {
     
         //Lord's way of populating stuff
-        content += `<div class="confirmed"><p class="title"><b>Confirmed Cases</b></p><p>Date : `+covid.confirmed.last_updated.slice(0, 10)+`</p><p>Count : `+covid.latest.confirmed+`</p></div>` ;
-        content += `<div class="deaths"><p class="title"><b>Deaths</b></p><p>Date : `+covid.deaths.last_updated.slice(0, 10)+`</p><p>Count : `+covid.latest.deaths+`</p></div>` ;
-        content += `<div class="recovered"><p class="title"><b>Recovered</b></p><p>Date : `+covid.recovered.last_updated.slice(0, 10)+`</p><p>Count : `+covid.latest.recovered+`</p></div>` ;
+        //content += `<div class="confirmed"><p class="title"><b>Confirmed Cases</b></p><p>Date : `+covid.confirmed.last_updated.slice(0, 10)+`</p><p>Count : `+covid.latest.confirmed+`</p></div>` ;
+        //content += `<div class="deaths"><p class="title"><b>Deaths</b></p><p>Date : `+covid.deaths.last_updated.slice(0, 10)+`</p><p>Count : `+covid.latest.deaths+`</p></div>` ;
+        //content += `<div class="recovered"><p class="title"><b>Recovered</b></p><p>Date : `+covid.recovered.last_updated.slice(0, 10)+`</p><p>Count : `+covid.latest.recovered+`</p></div>` ;
     
+
+        //julia's code for latest stats:
+
+        const deathPercent = (covid.latest.deaths / covid.latest.confirmed * 100).toFixed(2) + '%';
+        const recoveredPercent = (covid.latest.recovered / covid.latest.confirmed * 100).toFixed(2) + '%';
+
+        content += `<div class="latestText"><p class="latestDate">As of ${covid.confirmed.last_updated.slice(0, 10)}, there are:</p> <p class="latestFigures">${covid.latest.confirmed} confirmed cases worldwide, <br> ${covid.latest.deaths} deaths (${deathPercent}), <br> ${covid.latest.recovered} recovered (${recoveredPercent})</p>`;
+
+
         $(".latestContainer").html(content);
         $(".loadingScreen").hide();
     

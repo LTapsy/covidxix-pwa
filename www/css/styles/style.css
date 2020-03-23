@@ -115,6 +115,7 @@ menu ul li a{
     color:#4c77af;
 }
 
+/* original banner on latestUpdate page, not currently used */
 .latestCases{
     display:flex;
     height:20vh;
@@ -128,8 +129,10 @@ menu ul li a{
 }
 
 .latestContainer{
-    padding:10px 30px;
-    margin-bottom:30px;
+    padding:10px 20px;
+    margin-bottom:20px;
+    /* height: 20vh; */
+    display: block;
 }
 
 .deaths,.confirmed,.recovered{
@@ -248,10 +251,41 @@ menu ul li a{
 /* /////////////// */
 
 
-
+/* added background image to contentBox */
 .contentBox{
-    height:73vh;
+    height:92vh;
     overflow: scroll;
+    background:url(../../img/corona.jpg),#292929;
+    background-blend-mode: overlay;
+    background-position: center;
+    background-size:cover;
+    color: white;
+    
+    display: flex;
+    justify-content: center;
+    /* align-items: center;  this one ruins the responsiveness at mobile size */
+
+}
+
+.latestText{
+    text-transform: none;
+    font-size: 18px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    align-self: center;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.latestFigures{
+    padding-left: 15px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+
+.latestDate{
+    display: block;
+    margin-bottom: 10px;
+    padding-left: none;
 }
 
 .graph{
@@ -311,7 +345,7 @@ menu ul li a{
     display:none;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 475px) {
 
     .contentBox{
         display:flex;
@@ -319,8 +353,9 @@ menu ul li a{
     }
 
     .graph{
-        width:800px;
-        height:500px;
+        width:550px;
+        height:366px;
+        align-self: center;
     }
 
     .latestContainer{
@@ -339,16 +374,27 @@ menu ul li a{
     }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 650px) {
 
     .contentBox{
         display:flex;
         flex-direction: column;
+        align-items: space-around;
+        overflow: scroll;
+    }
+
+    .latestText{
+        align-self: center;
+    }
+
+    .latestContainer{
+        align-self: center;
     }
 
     .graph{
         width:unset;
         height:unset;
+        margin-top: 0;
     }
 
     #mobileChart{
@@ -358,6 +404,7 @@ menu ul li a{
         display:none !important;
     }  
 }
+
 
 
 #myModal{
