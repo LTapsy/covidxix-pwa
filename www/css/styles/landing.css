@@ -1,0 +1,59 @@
+
+*{
+    margin:0;
+    padding:0;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: 'Roboto', sans-serif;
+    color:white;
+}
+
+::-webkit-scrollbar {width: 1px;height: 1px;}
+::-webkit-scrollbar-track {background: #f1f1f1;}
+::-webkit-scrollbar-thumb {background: #888;}
+::-webkit-scrollbar-thumb:hover {background: #555;}
+
+body{
+    background:#222222;
+    background:url("../../img/corona.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+    display: flex;
+    height:100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    
+}
+
+p{
+    text-align: center;
+    padding:50px 30px;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+}
+
+button{
+    width:300px;
+    background:#b15151;
+    border:none;
+    padding:20px;
+    margin:10px 0;
+    border-radius: 10px;
+}
+
+.launch:hover{
+    background:#cf5151;
+}
+
+.download{
+    background:#553a3a;
+    color:#818181;
+    opacity:0.9;
+}

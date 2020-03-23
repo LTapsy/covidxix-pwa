@@ -170,7 +170,7 @@ menu ul li a{
 
 
 .locations{
-    padding:20px;
+    padding:30px;
     display:flex;
     flex-direction: row;
     justify-content: center;
@@ -190,6 +190,7 @@ menu ul li a{
 }
 
 .locations .pwestuhan{
+    position:absolute;
     text-align: center;
 }
 
@@ -356,4 +357,9 @@ menu ul li a{
     #myChart{
         display:none !important;
     }  
+}
+
+
+#myModal{
+    padding:50px 0 0 0;
 }
