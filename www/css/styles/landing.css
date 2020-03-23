@@ -15,7 +15,9 @@
 
 body{
     background:#222222;
-    background:url("../../img/corona.jpg");
+    background:url("../../img/corona.jpg"),#2f2f2f;
+    background-blend-mode: overlay;
+    background-position: center;
     background-repeat:no-repeat;
     background-size: cover;
     display: flex;
